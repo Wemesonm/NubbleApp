@@ -26,7 +26,6 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
@@ -46,6 +45,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Panchang-Light.otf</string>
+		<string>Panchang-Extralight.otf</string>
+		<string>Satoshi-Light.otf</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
