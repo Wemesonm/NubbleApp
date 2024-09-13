@@ -1807,6 +1807,11 @@
     "invariant" "^2.2.4"
     "nullthrows" "^1.1.1"
 
+"@shopify/restyle@^2.4.4":
+  "integrity" "sha512-Y64T8pCSKZi7ChMMfCfe+EJJsqeF+lNLsxYDHbuU63ffLHN7wRwIALJY6VqzcJWZX3fhCztX7AqOkgc7CetfPg=="
+  "resolved" "https://registry.npmjs.org/@shopify/restyle/-/restyle-2.4.4.tgz"
+  "version" "2.4.4"
+
 "@sideway/address@^4.1.5":
   "integrity" "sha512-IqO/DUQHUkPeixNQ8n0JA6102hT9CmaljNTPmQ1u8MEhBo/R4Q8eKLN/vGZxuebwOroDB4cbpjheD4+/sKFK4Q=="
   "resolved" "https://registry.npmjs.org/@sideway/address/-/address-4.1.5.tgz"
