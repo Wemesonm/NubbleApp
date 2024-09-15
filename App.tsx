@@ -6,19 +6,18 @@ import { Button } from './src/components/Button/Button';
 
 import { ThemeProvider } from '@shopify/restyle';
 import { theme } from './src/theme/theme';
-import { Box } from './src/components/Box/Box';
 
 function App(): React.JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
         <View style={{ paddingHorizontal: 24 }}>
-          <Text preset="headingLarge" bold>Testecsdcsc</Text>
+          <Text preset="headingLarge" bold>Coffstack</Text>
 
-          <Button marginBottom='s10' title="Enter" />
-          <Box>
-            <Button loading title="Loading" />
-          </Box>
+          <Button loading marginBottom="s10" title="Primary"/>
+          <Button marginBottom="s10" title="Primary" preset="primary" disabled/>
+          <Button marginBottom="s10" title="Outline" preset="outline"/>
+          <Button title="Loading" preset="outline" disabled/>
         </View>
       </SafeAreaView>
     </ThemeProvider>

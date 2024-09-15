@@ -61,3 +61,4 @@ export const theme = createTheme({
 });
 
 export type Theme = typeof theme; //aqui eu crio dinamicamente o type do tema, se add algo no thema ja vai aparecer aqui
+export type ThemeColors = keyof Theme['colors'];
