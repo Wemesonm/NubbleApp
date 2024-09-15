@@ -22,7 +22,7 @@ const palette = {
 export const theme = createTheme({
   colors: {
     ...palette,
-    primary:palette.greenPrimary,
+    primary: palette.greenPrimary,
     primaryContrast: palette.grayWhite,
 
     buttonPrimary: palette.greenPrimary,
@@ -36,10 +36,28 @@ export const theme = createTheme({
     sucess: palette.greenSucess,
     sucessLight: palette.greenSucessLight,
   },
-  spacing: {},
-  borderRadios:{},
-
+  spacing: {
+    s4: 4,
+    s8: 8,
+    s10: 10,
+    s12: 12,
+    s14: 14,
+    s16: 16,
+    s20: 20,
+    s24: 24,
+    s32: 32,
+    s40: 40,
+    s48: 48,
+    s56: 56,
+  },
+  borderRadii: {
+    s8: 8,
+    s12: 12,
+    s16: 16,
+  },
+  textVariants: {
+    defaults: {},
+  },
 });
 
-
-export type Thema = typeof theme;
+export type Theme = typeof theme; //aqui eu crio dinamicamente o type do tema, se add algo no thema ja vai aparecer aqui
