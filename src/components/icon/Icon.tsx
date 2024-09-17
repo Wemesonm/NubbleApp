@@ -38,7 +38,6 @@ interface Props {
 export function Icon({ name, color = 'backgroundContrast', size }: Props) {
   const { colors } = useAppTheme();
   const SVGIcon = iconRegistry[name];
-
   return <SVGIcon color={colors[color]} size={size} />;
 }
 

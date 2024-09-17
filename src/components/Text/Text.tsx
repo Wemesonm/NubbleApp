@@ -9,7 +9,7 @@ const SRText = createText<Theme>();
 
 type SRTextProps = React.ComponentProps<typeof SRText>
 
-interface TextProps extends SRTextProps {
+export interface TextProps extends SRTextProps {
   preset?: TextVariants;
   bold?: boolean;
   italic?: boolean;
@@ -19,14 +19,14 @@ interface TextProps extends SRTextProps {
 export function Text({
   children,
   preset = 'paragraphMedium',
-  style,
   bold,
   italic,
   semiBold,
+  style,
   ...sRTextProps
 }: TextProps) {
 
-  const fontFamily = getFontFemily(preset, bold, italic, semiBold);
+  const fontFamily = getFontFamily(preset, bold, italic, semiBold);
 
   return (
     <SRText
@@ -41,7 +41,7 @@ export function Text({
   );
 }
 
-function getFontFemily(preset: TextVariants, bold?: boolean, italic?: boolean, semiBold?: boolean) {
+function getFontFamily(preset: TextVariants, bold?: boolean, italic?: boolean, semiBold?: boolean) {
   if (
     preset === 'headingLarge' ||
     preset === 'headingSmall' ||
@@ -78,7 +78,7 @@ type TextVariants =
   | 'paragraphCaption'
   | 'paragraphCaptionSmall';
 
-const $fontSizes: Record<TextVariants, TextStyle> = {
+export const $fontSizes: Record<TextVariants, TextStyle> = {
   headingLarge: { fontSize: 32, lineHeight: 38.4 },
   headingMedium: { fontSize: 22, lineHeight: 26.4 },
   headingSmall: { fontSize: 18, lineHeight: 23.4 },
@@ -91,7 +91,7 @@ const $fontSizes: Record<TextVariants, TextStyle> = {
   paragraphCaptionSmall: { fontSize: 10, lineHeight: 14 },
 };
 
-const $fontFamily = {
+export const $fontFamily = {
   black: 'Satoshi-Black',
   blackItalic: 'Satoshi-BlackItalic',
   bold: 'Satoshi-Bold',
