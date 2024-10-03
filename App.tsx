@@ -8,7 +8,7 @@ import { theme } from './src/theme/theme';
 import { Box } from './src/components/Box/Box';
 import { Icon } from './src/components/icon/Icon';
 import { Button } from './src/components/Button/Button';
-import { TextInput} from './src/components/TextInput/TextInput';
+import { TextInput } from './src/components/TextInput/TextInput';
 
 function App(): React.JSX.Element {
   return (
@@ -19,15 +19,15 @@ function App(): React.JSX.Element {
           <Text marginBottom="s40" preset="paragraphLarge">Insert your e-mail and password!</Text>
           <Box marginBottom="s20">
             <TextInput
-            label="E-mail"
-              style={{ borderWidth: 1, height: 50 }}
+              errorMessage='Mensagem de Erro'
+              label="E-mail"
               placeholder="Type your e-mail"
             />
           </Box>
           <Box>
             <TextInput
-            label="Password"
-              style={{ borderWidth: 1, height: 50 }}
+              errorMessage='Mensagem de Erro'
+              label="Password"
               placeholder="Type your password"
             />
           </Box>
@@ -38,8 +38,8 @@ function App(): React.JSX.Element {
             marginTop="s10">
             I forgot my password
           </Text>
-          <Button marginTop="s48" title="Enter"/>
-          <Button preset="outline" marginTop="s12" title="Enter"/>
+          <Button marginTop="s48" title="Enter" />
+          <Button preset="outline" marginTop="s12" title="Enter" />
         </View>
       </SafeAreaView>
     </ThemeProvider>
