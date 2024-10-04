@@ -17,25 +17,22 @@ function App(): React.JSX.Element {
         <View style={{ paddingHorizontal: 24 }}>
           <Text marginBottom="s8" preset="paragraphLarge">Hello!</Text>
           <Text marginBottom="s40" preset="paragraphLarge">Insert your e-mail and password!</Text>
-          <Box marginBottom="s20">
-            <TextInput
-              errorMessage='Mensagem de Erro'
-              label="E-mail"
-              placeholder="Type your e-mail"
-            />
-          </Box>
-          <Box>
-            <TextInput
-              errorMessage='Mensagem de Erro'
-              label="Password"
-              placeholder="Type your password"
-            />
-          </Box>
+          <TextInput
+            errorMessage="Mensagem de Erro"
+            label="E-mail"
+            placeholder="Type your e-mail"
+            boxProps={{mb:'s20'}}
+          />
+          <TextInput
+            label="Password"
+            placeholder="Type your password"
+            RightComponent={<Icon name="eyeOn" color="gray2" />}
+            boxProps={{mb:'s10'}}
+          />
           <Text
             bold
             preset="paragraphSmall"
-            color="primary"
-            marginTop="s10">
+            color="primary">
             I forgot my password
           </Text>
           <Button marginTop="s48" title="Enter" />
