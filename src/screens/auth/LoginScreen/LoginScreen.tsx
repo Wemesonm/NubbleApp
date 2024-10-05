@@ -2,14 +2,14 @@ import React from 'react';
 
 import { Text } from '../../../components/Text/Text';
 import { TextInput } from '../../../components/TextInput/TextInput';
-import { Icon } from '../../../components/icon/Icon';
 import { Button } from '../../../components/Button/Button';
 import { Screen } from '../../../components/Screen/Screen';
+import { PasswordInput } from '../../../components/PasswordInput/PasswordInput';
 
 export function LoginScreen() {
   return (
-    <Screen>
-      <Text marginBottom="s8" preset="paragraphLarge">Hello!</Text>
+    <Screen scrollable>
+      <Text marginBottom="s8" preset="headingLarge">Hello!</Text>
       <Text marginBottom="s40" preset="paragraphLarge">Insert your e-mail and password!</Text>
       <TextInput
         errorMessage="Mensagem de Erro"
@@ -17,10 +17,9 @@ export function LoginScreen() {
         placeholder="Type your e-mail"
         boxProps={{ mb: 's20' }}
       />
-      <TextInput
+      <PasswordInput
         label="Password"
         placeholder="Type your password"
-        RightComponent={<Icon name="eyeOn" color="gray2" />}
         boxProps={{ mb: 's10' }}
       />
       <Text
@@ -32,8 +31,5 @@ export function LoginScreen() {
       <Button marginTop="s48" title="Enter" />
       <Button preset="outline" marginTop="s12" title="Enter" />
     </Screen>
-
-
-
   );
 }

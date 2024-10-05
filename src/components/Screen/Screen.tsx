@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAvoidingView, Platform} from 'react-native';
+import { KeyboardAvoidingView, Platform } from 'react-native';
 
 import { Box } from '../Box/Box';
 import { useAppSafeArea } from '../../hooks/useAppSafeArea';
@@ -20,7 +20,10 @@ export function Screen({ children, canGoBack = false, scrollable = false }: Scre
   const Container = scrollable ? ScrollViewContainer : ViewContainer;
 
   return (
-    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
       <Container backgroundColor={colors.background}>
         <Box
           paddingBottom="s24"
@@ -30,7 +33,8 @@ export function Screen({ children, canGoBack = false, scrollable = false }: Scre
           {canGoBack && (<Box mb="s24" flexDirection="row">
             <Icon name="arrowLeft" color="primary" />
             <Text preset="paragraphMedium" semiBold ml="s8" color="grayBlack">Voltar</Text>
-          </Box>)}
+          </Box>
+          )}
           {children}
         </Box>
       </Container>
