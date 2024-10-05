@@ -1,13 +1,14 @@
-import React, { Pressable, TextInput as RNTextInput, TextInputProps as RNTextInputProps, TextStyle } from 'react-native';
+import React, { useRef } from 'react';
+import { Pressable, TextInput as RNTextInput, TextInputProps as RNTextInputProps, TextStyle } from 'react-native';
+
 import { Box, BoxProps } from '../Box/Box';
 import { $fontFamily, $fontSizes, Text } from '../Text/Text';
 import { useAppTheme } from '../../hooks/useAppTheme';
-import { ReactElement, useRef } from 'react';
 
 interface TextInputProps extends RNTextInputProps {
   label: string;
   errorMessage?: string;
-  RightComponent?: ReactElement;
+  RightComponent?: React.ReactElement;
   boxProps?: BoxProps;
 }
 
