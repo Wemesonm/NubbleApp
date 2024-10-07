@@ -5,7 +5,15 @@ import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 
+// adicionei manualmente para ativar a biblioteca react navigation
+import android.os.Bundle; 
+
 class MainActivity : ReactActivity() {
+
+  // adicionei manualmente para ativar a biblioteca react navigation
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(null)
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
