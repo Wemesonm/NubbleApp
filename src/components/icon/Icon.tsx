@@ -23,6 +23,8 @@ import { SearchIcon } from '../../assets/icons/SearchIcon';
 import { SendIcon } from '../../assets/icons/SendIcon';
 import { SettingsIcon } from '../../assets/icons/SettingsIcon';
 import { TrashIcon } from '../../assets/icons/TrashIcon';
+import { CheckRoundIcon } from '../../assets/icons/CheckRoundIcon';
+import { messageRoundIcon } from '../../assets/icons/messageRoundIcon';
 
 
 
@@ -31,14 +33,14 @@ export interface iconBase {
   color?: string;
 }
 
-interface Props {
+export interface IconProps {
   name: iconName;
   color?: ThemeColors;
   size?: number;
   onPress?: () => void;
 }
 
-export function Icon({ name, color = 'backgroundContrast', size, onPress }: Props) {
+export function Icon({ name, color = 'backgroundContrast', size, onPress }: IconProps) {
   const { colors } = useAppTheme();
   const SVGIcon = iconRegistry[name];
 
@@ -63,6 +65,7 @@ const iconRegistry = {
   chat: ChatIcon,
   chatOn: ChatOnIcon,
   check: CheckIcon,
+  CheckRound:CheckRoundIcon,
   chevronRight: ChevronRightIcon,
   comment: CommentIcon,
   eyeOff: EyeOffIcon,
@@ -70,6 +73,7 @@ const iconRegistry = {
   flashOff: FlashOffIcon,
   flashOn: FlashOnIcon,
   message: MessageIcon,
+  messageRoun: messageRoundIcon,
   more: MoreIcon,
   search: SearchIcon,
   send: SendIcon,

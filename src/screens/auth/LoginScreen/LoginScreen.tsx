@@ -17,6 +17,10 @@ export function LoginScreen({ navigation }: ScreenProps) {
     navigation.navigate('SignUpScreen');
   };
 
+  const navigateToForgotPasswordScreen = () => {
+    navigation.navigate('ForgotPasswordScreen');
+  };
+
   return (
     <Screen scrollable>
       <Text marginBottom="s8" preset="headingLarge">Hello!</Text>
@@ -33,6 +37,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
         boxProps={{ mb: 's10' }}
       />
       <Text
+        onPress={navigateToForgotPasswordScreen}
         bold
         preset="paragraphSmall"
         color="primary">

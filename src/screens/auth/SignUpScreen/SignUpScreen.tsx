@@ -7,13 +7,27 @@ import { PasswordInput } from '../../../components/PasswordInput/PasswordInput';
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../../router/Router';
+import { useResteNavigationSucess } from '../../../hooks/useResetNavigationSuccess';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>
 
-export function SignUpScreen(props: ScreenProps) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function SignUpScreen({navigation}: ScreenProps) {
+  const {reset} = useResteNavigationSucess();
 
   const submitForm = () => {
     //TODO
+
+    reset(
+      {
+        title:'Sua conta foi criada com sucesso!',
+        description:"Agora 'e so fazer login na nossa plataforma",
+        icon:{
+          name:'CheckRound',
+          color:'sucess',
+        },
+      }
+    );
   };
 
   return (
