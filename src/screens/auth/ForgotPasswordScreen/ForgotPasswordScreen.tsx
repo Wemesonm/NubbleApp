@@ -1,15 +1,20 @@
 import React from 'react';
-import { Screen } from '../../../components/Screen/Screen';
-import { Text } from '../../../components/Text/Text';
-import { Button } from '../../../components/Button/Button';
-import { RootStackParamList } from '../../../router/Router';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { useResteNavigationSucess } from '../../../hooks/useResetNavigationSuccess';
+import {
+  Screen,
+  Text,
+  Button,
+  FormTextInput,
+} from '@components';
+import { RootStackParamList } from '@router';
+import { useResteNavigationSucess } from '@hooks';
 
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { ForgotPasswordSchema, forgotPasswordSchema } from './forgotPasswordSchema';
 import { useForm } from 'react-hook-form';
-import { FormTextInput } from '../../../components/Form/FormTextInput';
+import {
+  ForgotPasswordSchema,
+  forgotPasswordSchema,
+} from './forgotPasswordSchema';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'ForgotPasswordScreen'>
 
@@ -25,7 +30,7 @@ export function ForgotPasswordScreen({ navigation }: ScreenProps) {
     mode: 'onChange',
   });
 
-  const submitForm = (values:ForgotPasswordSchema) => {
+  const submitForm = (values: ForgotPasswordSchema) => {
     //TODO submit form
     console.log(values);
 

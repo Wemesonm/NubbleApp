@@ -1,4 +1,4 @@
-import {Theme} from '../theme/theme';
+import {Theme} from '@theme';
 import { useTheme } from '@shopify/restyle';
 
 export function useAppTheme() {

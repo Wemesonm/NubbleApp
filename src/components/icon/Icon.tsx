@@ -1,8 +1,8 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 
-import { useAppTheme } from '../../hooks/useAppTheme';
-import { ThemeColors } from '../../theme/theme';
+import { useAppTheme } from '@hooks';
+import { ThemeColors } from '@theme';
 
 import { EyeOnIcon } from '../../assets/icons/EyeOn';
 import { EyeOffIcon } from '../../assets/icons/EyeOffIcon';
@@ -25,8 +25,6 @@ import { SettingsIcon } from '../../assets/icons/SettingsIcon';
 import { TrashIcon } from '../../assets/icons/TrashIcon';
 import { CheckRoundIcon } from '../../assets/icons/CheckRoundIcon';
 import { messageRoundIcon } from '../../assets/icons/messageRoundIcon';
-
-
 
 export interface iconBase {
   size?: number;

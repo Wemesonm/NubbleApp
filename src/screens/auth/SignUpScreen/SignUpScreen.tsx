@@ -1,25 +1,27 @@
 import React from 'react';
-import { Screen } from '../../../components/Screen/Screen';
-import { Text } from '../../../components/Text/Text';
-import { Button } from '../../../components/Button/Button';
+
+import {
+  Screen,
+  Text,
+  Button,
+  FormTextInput,
+  FormPasswordInput,
+} from '@components';
+
+import {RootStackParamList} from '@router';
+import {useResteNavigationSucess} from '@hooks';
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../router/Router';
-// import { useResteNavigationSucess } from '../../../hooks/useResetNavigationSuccess';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-
-import { FormTextInput } from '../../../components/Form/FormTextInput';
-import { FormPasswordInput } from '../../../components/Form/FormPasswordInput';
 
 import { signUpSchema, SignUpSchema } from './signUpSchema';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>
 
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function SignUpScreen({ navigation }: ScreenProps) {
-  // const { reset } = useResteNavigationSucess();
+  const { reset } = useResteNavigationSucess();
   const { control, formState, handleSubmit } = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -34,16 +36,16 @@ export function SignUpScreen({ navigation }: ScreenProps) {
   const submitForm = (formValue: SignUpSchema) => {
     //TODO
     console.log(formValue);
-    // reset(
-    //   {
-    //     title: 'Sua conta foi criada com sucesso!',
-    //     description: "Agora 'e so fazer login na nossa plataforma",
-    //     icon: {
-    //       name: 'CheckRound',
-    //       color: 'sucess',
-    //     },
-    //   }
-    // );
+    reset(
+      {
+        title: 'Sua conta foi criada com sucesso!',
+        description: "Agora 'e so fazer login na nossa plataforma",
+        icon: {
+          name: 'CheckRound',
+          color: 'sucess',
+        },
+      }
+    );
   };
 
   return (
