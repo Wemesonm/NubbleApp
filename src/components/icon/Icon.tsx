@@ -4,8 +4,6 @@ import { Pressable } from 'react-native';
 import { useAppTheme } from '@hooks';
 import { ThemeColors } from '@theme';
 
-import { EyeOnIcon } from '../../assets/icons/EyeOn';
-import { EyeOffIcon } from '../../assets/icons/EyeOffIcon';
 import { ArrowLeftIcon } from '../../assets/icons/ArrowLeftIcon';
 import { ArrowRightIcon } from '../../assets/icons/ArrowRightIcon';
 import { BellIcon } from '../../assets/icons/BellIcon';
@@ -13,18 +11,20 @@ import { CameraIcon } from '../../assets/icons/CameraIcon';
 import { ChatIcon } from '../../assets/icons/ChatIcon';
 import { ChatOnIcon } from '../../assets/icons/ChatOnIcon';
 import { CheckIcon } from '../../assets/icons/CheckIcon';
-import { CommentIcon } from '../../assets/icons/CommentIcon';
+import { CheckRoundIcon } from '../../assets/icons/CheckRoundIcon';
 import { ChevronRightIcon } from '../../assets/icons/ChevronRightIcon';
+import { CommentIcon } from '../../assets/icons/CommentIcon';
+import { EyeOffIcon } from '../../assets/icons/EyeOffIcon';
+import { EyeOnIcon } from '../../assets/icons/EyeOn';
 import { FlashOffIcon } from '../../assets/icons/FlashOffIcon';
 import { FlashOnIcon } from '../../assets/icons/FlashOnIcon';
 import { MessageIcon } from '../../assets/icons/MessageIcon';
+import { messageRoundIcon } from '../../assets/icons/messageRoundIcon';
 import { MoreIcon } from '../../assets/icons/MoreIcon';
 import { SearchIcon } from '../../assets/icons/SearchIcon';
 import { SendIcon } from '../../assets/icons/SendIcon';
 import { SettingsIcon } from '../../assets/icons/SettingsIcon';
 import { TrashIcon } from '../../assets/icons/TrashIcon';
-import { CheckRoundIcon } from '../../assets/icons/CheckRoundIcon';
-import { messageRoundIcon } from '../../assets/icons/messageRoundIcon';
 
 export interface iconBase {
   size?: number;

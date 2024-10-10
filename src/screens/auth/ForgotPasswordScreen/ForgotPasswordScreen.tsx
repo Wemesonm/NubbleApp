@@ -1,16 +1,19 @@
 import React from 'react';
+
+import { zodResolver } from '@hookform/resolvers/zod';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useForm } from 'react-hook-form';
+
 import {
   Screen,
   Text,
   Button,
   FormTextInput,
 } from '@components';
-import { RootStackParamList } from '@router';
 import { useResteNavigationSucess } from '@hooks';
+import { RootStackParamList } from '@router';
 
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+
 import {
   ForgotPasswordSchema,
   forgotPasswordSchema,

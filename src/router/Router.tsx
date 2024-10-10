@@ -3,6 +3,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import {IconProps} from '@components';
 import {
   LoginScreen,
   SignUpScreen,
@@ -12,7 +13,6 @@ import {
 
 // import { IconProps } from '../components/icon/Icon';
 
-import {IconProps} from '@components';
 
 export type RootStackParamList = {
   LoginScreen: undefined;

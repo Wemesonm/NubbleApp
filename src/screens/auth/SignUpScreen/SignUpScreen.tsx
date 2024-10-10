@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { zodResolver } from '@hookform/resolvers/zod';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useForm } from 'react-hook-form';
+
 import {
   Screen,
   Text,
@@ -7,13 +11,8 @@ import {
   FormTextInput,
   FormPasswordInput,
 } from '@components';
-
-import {RootStackParamList} from '@router';
 import {useResteNavigationSucess} from '@hooks';
-
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import {RootStackParamList} from '@router';
 
 import { signUpSchema, SignUpSchema } from './signUpSchema';
 

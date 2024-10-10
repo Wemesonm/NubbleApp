@@ -2,7 +2,9 @@ import React from 'react';
 import {
   TextStyle,
 } from 'react-native';
+
 import { createText } from '@shopify/restyle';
+
 import { Theme } from '@theme';
 
 const SRText = createText<Theme>();
