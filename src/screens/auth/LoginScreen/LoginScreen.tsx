@@ -1,9 +1,8 @@
 import React from 'react';
-import { Alert } from 'react-native';
+import {Alert} from 'react-native';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { useForm } from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
+import {useForm} from 'react-hook-form';
 
 import {
   Text,
@@ -12,15 +11,12 @@ import {
   FormTextInput,
   FormPasswordInput,
 } from '@components';
-import { RootStackParamList } from '@router';
+import {AuthScreenProps} from '@router';
 
+import {LoginSchema, loginSchema} from './loginSchema';
 
-import { LoginSchema, loginSchema } from './loginSchema';
-
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
-
-export function LoginScreen({ navigation }: ScreenProps) {
-  const { control, formState, handleSubmit } = useForm<LoginSchema>({
+export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
+  const {control, formState, handleSubmit} = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: '',
@@ -29,7 +25,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
     mode: 'onChange',
   });
 
-  const submitForm = ({ email, password }: LoginSchema) => {
+  const submitForm = ({email, password}: LoginSchema) => {
     Alert.alert(`E-mail:${email} ${'\n'} Senha:${password}`);
   };
   const navigationToSignUpScreen = () => {
@@ -42,7 +38,9 @@ export function LoginScreen({ navigation }: ScreenProps) {
 
   return (
     <Screen scrollable>
-      <Text marginBottom="s8" preset="headingLarge">Olá!</Text>
+      <Text marginBottom="s8" preset="headingLarge">
+        Olá!
+      </Text>
       <Text marginBottom="s40" preset="paragraphLarge">
         Digite seu e-mail e senha para entrar
       </Text>
@@ -52,7 +50,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
         name="email"
         label="E-mail"
         placeholder="Type your e-mail"
-        boxProps={{ mb: 's20' }}
+        boxProps={{mb: 's20'}}
       />
 
       <FormPasswordInput
@@ -60,7 +58,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
         name="password"
         label="Password"
         placeholder="Type your password"
-        boxProps={{ mb: 's10' }}
+        boxProps={{mb: 's10'}}
       />
 
       <Text
@@ -76,7 +74,12 @@ export function LoginScreen({ navigation }: ScreenProps) {
         marginTop="s48"
         title="Enter"
       />
-      <Button onPress={navigationToSignUpScreen} preset="outline" marginTop="s12" title="Criar uma conta" />
+      <Button
+        onPress={navigationToSignUpScreen}
+        preset="outline"
+        marginTop="s12"
+        title="Criar uma conta"
+      />
     </Screen>
   );
 }

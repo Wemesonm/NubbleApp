@@ -1,19 +1,19 @@
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
-import { RootStackParamList } from '@router';
+import {AuthStackParamList} from '@router';
 
-export function useResteNavigationSucess(){
+export function useResteNavigationSucess() {
   const navigation = useNavigation();
 
-  const reset = (params:RootStackParamList['SuccessScreen']) => {
+  const reset = (params: AuthStackParamList['SuccessScreen']) => {
     navigation.reset({
-      index:1,
-      routes:[
+      index: 1,
+      routes: [
         {
-          name:'LoginScreen',
+          name: 'LoginScreen',
         },
         {
-          name:'SuccessScreen',
+          name: 'SuccessScreen',
           params,
         },
       ],
@@ -21,5 +21,4 @@ export function useResteNavigationSucess(){
   };
 
   return {reset};
-
 }

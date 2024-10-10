@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { useForm } from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
+import {useForm} from 'react-hook-form';
 
 import {
   Screen,
@@ -12,16 +11,14 @@ import {
   FormPasswordInput,
 } from '@components';
 import {useResteNavigationSucess} from '@hooks';
-import {RootStackParamList} from '@router';
+import {AuthScreenProps} from '@router';
 
-import { signUpSchema, SignUpSchema } from './signUpSchema';
-
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>
+import {SignUpSchema, signUpSchema} from './signUpSchema';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function SignUpScreen({ navigation }: ScreenProps) {
-  const { reset } = useResteNavigationSucess();
-  const { control, formState, handleSubmit } = useForm<SignUpSchema>({
+export function SignUpScreen({navigation}: AuthScreenProps<'SignUpScreen'>) {
+  const {reset} = useResteNavigationSucess();
+  const {control, formState, handleSubmit} = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
       userName: '',
@@ -35,28 +32,28 @@ export function SignUpScreen({ navigation }: ScreenProps) {
   const submitForm = (formValue: SignUpSchema) => {
     //TODO
     console.log(formValue);
-    reset(
-      {
-        title: 'Sua conta foi criada com sucesso!',
-        description: "Agora 'e so fazer login na nossa plataforma",
-        icon: {
-          name: 'CheckRound',
-          color: 'sucess',
-        },
-      }
-    );
+    reset({
+      title: 'Sua conta foi criada com sucesso!',
+      description: "Agora 'e so fazer login na nossa plataforma",
+      icon: {
+        name: 'CheckRound',
+        color: 'sucess',
+      },
+    });
   };
 
   return (
     <Screen canGoBack scrollable>
-      <Text preset="headingLarge" mb="s32">Criar uma conta</Text>
+      <Text preset="headingLarge" mb="s32">
+        Criar uma conta
+      </Text>
 
       <FormTextInput
         control={control}
         name="userName"
         label="Seu username"
         placeholder="@"
-        boxProps={{ mb: 's20' }}
+        boxProps={{mb: 's20'}}
       />
 
       <FormTextInput
@@ -64,7 +61,7 @@ export function SignUpScreen({ navigation }: ScreenProps) {
         name="fullName"
         label="Nome completo"
         placeholder="Digite seu nome completo"
-        boxProps={{ mb: 's20' }}
+        boxProps={{mb: 's20'}}
       />
 
       <FormTextInput
@@ -72,7 +69,7 @@ export function SignUpScreen({ navigation }: ScreenProps) {
         name="email"
         label="E-mail"
         placeholder="Type your e-mail"
-        boxProps={{ mb: 's20' }}
+        boxProps={{mb: 's20'}}
       />
 
       <FormPasswordInput
@@ -80,7 +77,7 @@ export function SignUpScreen({ navigation }: ScreenProps) {
         name="password"
         label="Password"
         placeholder="Type your password"
-        boxProps={{ mb: 's48' }}
+        boxProps={{mb: 's48'}}
       />
 
       <Button
