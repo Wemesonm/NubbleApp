@@ -20,6 +20,8 @@ import {EyeOffIcon} from '../../assets/icons/EyeOffIcon';
 import {EyeOnIcon} from '../../assets/icons/EyeOn';
 import {FlashOffIcon} from '../../assets/icons/FlashOffIcon';
 import {FlashOnIcon} from '../../assets/icons/FlashOnIcon';
+import {HeartFillIcon} from '../../assets/icons/HeartFillIcon';
+import {HeartIcon} from '../../assets/icons/HeartIcon';
 import {HomeFillIcon} from '../../assets/icons/HomeFillIcon';
 import {HomeIcon} from '../../assets/icons/HomeIcon';
 import {MessageIcon} from '../../assets/icons/MessageIcon';
@@ -82,6 +84,8 @@ const iconRegistry = {
   eyeOn: EyeOnIcon,
   flashOff: FlashOffIcon,
   flashOn: FlashOnIcon,
+  HeartFill: HeartFillIcon,
+  Heart: HeartIcon,
   home: HomeIcon,
   homeFill: HomeFillIcon,
   message: MessageIcon,
