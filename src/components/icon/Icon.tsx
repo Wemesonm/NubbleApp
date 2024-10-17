@@ -7,6 +7,7 @@ import {ThemeColors} from '@theme';
 import {ArrowLeftIcon} from '../../assets/icons/ArrowLeftIcon';
 import {ArrowRightIcon} from '../../assets/icons/ArrowRightIcon';
 import {BellIcon} from '../../assets/icons/BellIcon';
+import {BellOnIcon} from '../../assets/icons/BellOnIcon';
 import {BookMarkFillIcon} from '../../assets/icons/BookMarkFillIcon ';
 import {BookMarkIcon} from '../../assets/icons/BookMarkIcon';
 import {CameraIcon} from '../../assets/icons/CameraIcon';
@@ -71,6 +72,7 @@ const iconRegistry = {
   arrowLeft: ArrowLeftIcon,
   arrowRight: ArrowRightIcon,
   bell: BellIcon,
+  bellOn: BellOnIcon,
   bookMarkFill: BookMarkFillIcon,
   bookMark: BookMarkIcon,
   camera: CameraIcon,

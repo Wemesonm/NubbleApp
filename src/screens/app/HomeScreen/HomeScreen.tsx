@@ -6,6 +6,8 @@ import {Post, postService} from '@domain';
 import {PostItem, Screen} from '@components';
 import {AppTabScreenProps} from '@router';
 
+import {HomeHeader} from './components/HomeHeader';
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
   const [postList, setPostList] = useState<Post[]>([]);
@@ -23,6 +25,7 @@ export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
         data={postList}
         keyExtractor={item => item.id}
         renderItem={renderItem}
+        ListHeaderComponent={<HomeHeader />}
       />
     </Screen>
   );
