@@ -1,9 +1,8 @@
-import {postListMock} from './postListMock';
-import {Post} from './types';
+import {PageAPI} from '@api';
 
-async function getList(): Promise<Post[]> {
-  //TODo Simular delay
+import {PostAPI} from './postTypes';
 
+async function getList(): Promise<PageAPI<PostAPI>> {
   let response = await fetch('http://localhost:3333/user/post', {
     method: 'GET',
     headers: {
@@ -13,11 +12,7 @@ async function getList(): Promise<Post[]> {
   });
 
   let data = await response.json();
-  console.table('Fetch Data: ', data);
-
-  //****** */
-  await new Promise(resolve => setTimeout(() => resolve(''), 1000));
-  return postListMock;
+  return data;
 }
 
 export const postApi = {

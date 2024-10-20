@@ -11,6 +11,7 @@ module.exports = {
         '@theme': './src/theme',
         '@domain': './src/domain',
         '@brand': './src/brand',
+        '@api': './src/api',
       },
     }],
   ],
