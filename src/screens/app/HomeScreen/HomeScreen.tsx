@@ -1,7 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import {FlatList, ListRenderItemInfo, StyleProp, ViewStyle} from 'react-native';
+import React from 'react';
+import {
+  FlatList,
+  ListRenderItemInfo,
+  RefreshControl,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 
-import {Post, postService} from '@domain';
+import {Post, usePostList} from '@domain';
 
 import {PostItem, Screen} from '@components';
 import {AppTabScreenProps} from '@router';
@@ -11,27 +17,7 @@ import {HomeHeader} from './components/HomeHeader';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<boolean | null>(null);
-  const [postList, setPostList] = useState<Post[]>([]);
-
-  const fetchData = async () => {
-    try {
-      setError(null);
-      setLoading(true);
-      const list = await postService.getList();
-      setPostList(list);
-    } catch (err) {
-      console.log('ERROR:', err);
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const {error, loading, postList, refresh, fetchNextPage} = usePostList();
 
   const renderItem = ({item}: ListRenderItemInfo<Post>) => {
     return <PostItem post={item} />;
@@ -41,14 +27,19 @@ export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
       <FlatList
         showsVerticalScrollIndicator={false}
         data={postList}
-        // data={[]}
         keyExtractor={item => item.id}
         renderItem={renderItem}
+        onEndReached={fetchNextPage}
+        onEndReachedThreshold={0.1}
+        refreshControl={
+          <RefreshControl refreshing={loading} onRefresh={refresh} />
+        }
+        refreshing={loading}
         // eslint-disable-next-line react-native/no-inline-styles
         contentContainerStyle={{flex: postList.length === 0 ? 1 : undefined}}
         ListHeaderComponent={<HomeHeader />}
         ListEmptyComponent={
-          <HomeEmpty loading={loading} error={error} refetch={fetchData} />
+          <HomeEmpty loading={loading} error={error} refetch={refresh} />
         }
       />
     </Screen>
