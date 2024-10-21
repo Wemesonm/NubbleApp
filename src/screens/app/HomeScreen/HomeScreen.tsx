@@ -17,7 +17,7 @@ export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
 
   const fetchData = async () => {
     try {
-      setError(null)
+      setError(null);
       setLoading(true);
       const list = await postService.getList();
       setPostList(list);
@@ -44,6 +44,7 @@ export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
         // data={[]}
         keyExtractor={item => item.id}
         renderItem={renderItem}
+        // eslint-disable-next-line react-native/no-inline-styles
         contentContainerStyle={{flex: postList.length === 0 ? 1 : undefined}}
         ListHeaderComponent={<HomeHeader />}
         ListEmptyComponent={
