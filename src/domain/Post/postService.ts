@@ -5,11 +5,11 @@ import {postAdapter} from './postAdapter';
 import {postApi} from './postApi';
 import {Post} from './postTypes';
 
-async function getList(page: number): Promise<Page<Post>> {
-  const postPageAPI = await postApi.getList({page, per_page: 10});
+const PER_PAGE = 10;
 
-  // throw new Error('Erro de teste');
-  // return [];
+async function getList(page: number): Promise<Page<Post>> {
+  const postPageAPI = await postApi.getList({page, per_page: PER_PAGE});
+
   return {
     data: postPageAPI.data.map(postAdapter.toPost),
     meta: apiAdapter.toMetaDataPage(postPageAPI.meta),
