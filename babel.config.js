@@ -6,14 +6,15 @@ module.exports = {
       {
         root: '.',
         alias: {
+          '@api': './src/api',
+          //assets need to be refactory
+          '@brand': './src/brand',
           '@components': './src/components',
+          '@domain': './src/domain',
           '@hooks': './src/hooks',
           '@router': './src/router',
           '@screens': './src/screens',
           '@theme': './src/theme',
-          '@domain': './src/domain',
-          '@brand': './src/brand',
-          '@api': './src/api',
           '@types': './src/types',
         },
       },
