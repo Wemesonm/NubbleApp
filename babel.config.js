@@ -9,7 +9,7 @@ module.exports = {
           '@api': './src/api',
           //assets need to be refactory
           '@brand': './src/brand',
-          '@components': './src/components',
+          '@components': '/src/components',
           '@domain': './src/domain',
           '@hooks': './src/hooks',
           '@infra': './src/infra',
