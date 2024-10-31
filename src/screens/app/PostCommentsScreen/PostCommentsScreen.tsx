@@ -7,14 +7,18 @@ import {Box, Screen} from '@components';
 import {useAppSafeArea} from '@hooks';
 import {AppScreenProps} from '@router';
 
-import {PostCommentBottom, PostCommentItem} from './components';
+import {
+  PostCommentBottom,
+  PostCommentItem,
+  PostCommentTextMessage,
+} from './components';
 
 export function PostCommentsScreen({
   route,
 }: AppScreenProps<'PostCommentsScreen'>) {
   const postId = route.params.postId;
-
-  const {list, fetchNextPage, hasNextpage} = usePostCommentList(postId);
+  const {list, fetchNextPage, hasNextpage, refresh} =
+    usePostCommentList(postId);
 
   const {bottom} = useAppSafeArea();
 
@@ -23,8 +27,8 @@ export function PostCommentsScreen({
   }
 
   return (
-    <Screen title="Comentarios" canGoBack>
-      <Box>
+    <Screen flex={1} title="Comentarios" canGoBack>
+      <Box flex={1} justifyContent="space-between">
         <FlatList
           showsVerticalScrollIndicator={false}
           data={list}
@@ -37,6 +41,7 @@ export function PostCommentsScreen({
             />
           }
         />
+        <PostCommentTextMessage postId={postId} onAddComment={refresh} />
       </Box>
     </Screen>
   );

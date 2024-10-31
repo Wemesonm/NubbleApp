@@ -12,6 +12,7 @@ module.exports = {
           '@components': './src/components',
           '@domain': './src/domain',
           '@hooks': './src/hooks',
+          '@infra': './src/infra',
           '@router': './src/router',
           '@screens': './src/screens',
           '@theme': './src/theme',
