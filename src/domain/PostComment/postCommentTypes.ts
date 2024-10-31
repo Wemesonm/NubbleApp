@@ -3,6 +3,7 @@ export interface PostComment {
   id: number;
   message: string;
   createdAt: string; // '2024-10-22T16:30:32.000-04:00';
+  createdAtRelative:string; //'1h, 2sem';
   author: {
     id:number;
     profileURL: string;
